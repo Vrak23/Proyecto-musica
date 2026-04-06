@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tienda de Música</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/Dashboard.css">
+    <style>
+        .view-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .view-section.active-section {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="Logo.jpeg" alt="Logo de la tienda" class="logo-img">
+                <span>SoundVibe</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-target="articulos"><i class="fa-solid fa-guitar"></i> Artículos
+                    (Instrumentos)</a>
+                <a href="#" class="nav-item" data-target="ventas"><i class="fa-solid fa-cart-arrow-down"></i> Ventas</a>
+                <a href="#" class="nav-item" data-target="historial"><i class="fa-solid fa-clock-rotate-left"></i>
+                    Historial de compras</a>
+                <a href="#" class="nav-item" data-target="clientes"><i class="fa-solid fa-users"></i> Panel de Clientes</a>
+            </nav>
+            <div class="bottom-nav">
+                <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> Ajustes</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar guitarras, pianos, baterías...">
+                </div>
+                <div class="user-profile">
+                    <div class="notification-bell">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="avatar">
+                        <img src="Perfil.jpeg" alt="Avatar">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Gerente</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Wrapper -->
+            <div class="content-wrapper">
+
+                <!-- 1. SECCIÓN: ARTÍCULOS (INSTRUMENTOS) -->
+                <div id="articulos" class="view-section active-section">
+                    <div class="welcome-section">
+                        <h1>Gesti&oacute;n de Art&iacute;culos</h1>
+                        <p>Visualiza el estado de tu inventario y los instrumentos más solicitados.</p>
+                    </div>
+
+                    <div class="kpi-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            <div class="kpi-details">
+                                <h3>Stock Bajo</h3>
+                                <h2>8 Equipos</h2>
+                                <span class="trend negative"><i class="fa-solid fa-arrow-trend-down"></i> Urgente
+                                    reabastecer</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-truck"></i></div>
+                            <div class="kpi-details">
+                                <h3>Órdenes de Proveedor</h3>
+                                <h2>3 Entregas</h2>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> A tiempo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-grid" style="grid-template-columns: 1fr;">
+                        <div class="bento-card">
+                            <div class="card-header">
+                                <h3>Instrumentos más vendidos del mes</h3>
+                            </div>
+                            <div class="top-tracks-list">
+                                <div class="track-item">
+                                    <span class="rank">1</span>
+                                    <div class="track-info">
+                                        <h4>Fender Stratocaster</h4>
+                                        <p>Guitarras</p>
+                                    </div>
+                                    <span class="sales-count">12 uds. en almacén</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="rank">2</span>
+                                    <div class="track-info">
+                                        <h4>Yamaha P-125</h4>
+                                        <p>Teclados/Pianos</p>
+                                    </div>
+                                    <span class="sales-count">8 uds. en almacén</span>
+                                </div>
+                                <div class="track-item">
+                                    <span class="rank">3</span>
+                                    <div class="track-info">
+                                        <h4>Batería Pearl Export</h4>
+                                        <p>Percusión</p>
+                                    </div>
+                                    <span class="sales-count">3 uds. en almacén (Bajo)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. SECCIÓN: VENTAS -->
+                <div id="ventas" class="view-section">
+                    <div class="welcome-section">
+                        <h1>Panel de Ventas</h1>
+                        <p>Estadísticas de ingresos y transacciones recientes de la tienda.</p>
+                    </div>
+
+                    <div class="kpi-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                            <div class="kpi-details">
+                                <h3>Ingresos Totales</h3>
+                                <h2>$18,450</h2>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12% respecto al
+                                    mes pasado</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-credit-card"></i></div>
+                            <div class="kpi-details">
+                                <h3>Instrumentos Vendidos</h3>
+                                <h2>24</h2>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +4% esta
+                                    semana</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-grid" style="grid-template-columns: 1fr;">
+                        <div class="bento-card">
+                            <div class="card-header">
+                                <h3>Ventas Recientes</h3>
+                                <button class="btn-more">Descargar reporte</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="recent-sales-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Artículo</th>
+                                            <th>Cliente</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="product-img inst-1"></div>
+                                                    <span>Fender Stratocaster Player</span>
+                                                </div>
+                                            </td>
+                                            <td>Carlos Sánchez</td>
+                                            <td>Hoy, 14:30</td>
+                                            <td><span class="status completed">Completado</span></td>
+                                            <td>$850.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="product-img inst-2"></div>
+                                                    <span>Piano Digital Yamaha P-125</span>
+                                                </div>
+                                            </td>
+                                            <td>María López</td>
+                                            <td>Hoy, 12:15</td>
+                                            <td><span class="status pending">Enviando</span></td>
+                                            <td>$1,200.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="product-img inst-3"></div>
+                                                    <span>Batería Pearl Export</span>
+                                                </div>
+                                            </td>
+                                            <td>Juan Pérez</td>
+                                            <td>Ayer, 18:40</td>
+                                            <td><span class="status completed">Completado</span></td>
+                                            <td>$950.50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="product-img inst-4"></div>
+                                                    <span>Guitarra Acústica Taylor 114ce</span>
+                                                </div>
+                                            </td>
+                                            <td>Ana Gómez</td>
+                                            <td>Ayer, 10:20</td>
+                                            <td><span class="status completed">Completado</span></td>
+                                            <td>$1,100.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. SECCIÓN: HISTORIAL DE COMPRAS -->
+                <div id="historial" class="view-section">
+                    <div class="welcome-section">
+                        <h1>Historial de Compras (Proveedores)</h1>
+                        <p>Revisa el historial de abastecimiento y compras realizadas para nutrir el inventario.</p>
+                    </div>
+
+                    <div class="bento-grid" style="grid-template-columns: 1fr;">
+                        <div class="bento-card">
+                            <div class="card-header">
+                                <h3>Registro de Proveedores</h3>
+                                <button class="btn-more">Nueva Compra</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="recent-sales-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Lote / Pedido</th>
+                                            <th>Proveedor</th>
+                                            <th>Fecha de Solicitud</th>
+                                            <th>Estado / Pago</th>
+                                            <th>Costo Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div
+                                                        style="background-color: var(--color-bg-main); padding: 12px; border-radius: 8px; color: var(--color-accent); font-weight: bold;">
+                                                        #L-802</div>
+                                                    <span>Lote Guitarras Eléctricas (10x)</span>
+                                                </div>
+                                            </td>
+                                            <td>Fender GMI Dist.</td>
+                                            <td>02 Abril, 2026</td>
+                                            <td><span class="status completed">Liquidado</span></td>
+                                            <td>$5,400.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div
+                                                        style="background-color: var(--color-bg-main); padding: 12px; border-radius: 8px; color: var(--color-accent); font-weight: bold;">
+                                                        #L-803</div>
+                                                    <span>Sintetizadores y Pianos (5x)</span>
+                                                </div>
+                                            </td>
+                                            <td>Yamaha Latam</td>
+                                            <td>28 Marzo, 2026</td>
+                                            <td><span class="status pending">En tránsito</span></td>
+                                            <td>$4,150.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div
+                                                        style="background-color: var(--color-bg-main); padding: 12px; border-radius: 8px; color: var(--color-accent); font-weight: bold;">
+                                                        #L-804</div>
+                                                    <span>Accesorios Básicos (Cables, Púas)</span>
+                                                </div>
+                                            </td>
+                                            <td>MusicStore Wholesale</td>
+                                            <td>25 Marzo, 2026</td>
+                                            <td><span class="status completed">Liquidado</span></td>
+                                            <td>$890.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. SECCIÓN: PANEL DE CLIENTES -->
+                <div id="clientes" class="view-section">
+                    <div class="welcome-section">
+                        <h1>Directorio de Clientes</h1>
+                        <p>Gestión de tu base de datos de compradores e interacciones recientes.</p>
+                    </div>
+
+                    <div class="kpi-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="kpi-details">
+                                <h3>Total de Clientes Registrados</h3>
+                                <h2>142</h2>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12 este mes</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-icon"><i class="fa-solid fa-star"></i></div>
+                            <div class="kpi-details">
+                                <h3>Clientes Frecuentes</h3>
+                                <h2>38</h2>
+                                <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> Retención alta</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-grid" style="grid-template-columns: 1fr;">
+                        <div class="bento-card">
+                            <div class="card-header">
+                                <h3>Últimos Registros</h3>
+                                <button class="btn-more">Exportar a CSV</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="recent-sales-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Cliente</th>
+                                            <th>Correo Electrónico</th>
+                                            <th>Fecha de Registro</th>
+                                            <th>Gastos en Tienda</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="avatar" style="padding: 0;"><img src="https://i.pravatar.cc/150?img=33" alt="" style="width: 44px; height: 44px; border-radius: 50%; border: none;"></div>
+                                                    <span>Fernando Ruiz</span>
+                                                </div>
+                                            </td>
+                                            <td>fruiz_per@gmail.com</td>
+                                            <td>Hoy, 09:12 AM</td>
+                                            <td>$850.00</td>
+                                            <td><span class="status completed">Activo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="avatar" style="padding: 0;"><img src="https://i.pravatar.cc/150?img=47" alt="" style="width: 44px; height: 44px; border-radius: 50%; border: none;"></div>
+                                                    <span>Sara Castillo</span>
+                                                </div>
+                                            </td>
+                                            <td>sara.cast89@outlook.com</td>
+                                            <td>Ayer, 04:30 PM</td>
+                                            <td>$3,450.00</td>
+                                            <td><span class="status completed">Activo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <div class="avatar" style="padding: 0;"><img src="https://i.pravatar.cc/150?img=12" alt="" style="width: 44px; height: 44px; border-radius: 50%; border: none;"></div>
+                                                    <span>Miguel Torres</span>
+                                                </div>
+                                            </td>
+                                            <td>mitore99@yahoo.com</td>
+                                            <td>03 Abril, 2026</td>
+                                            <td>$0.00</td>
+                                            <td><span class="status pending">Pendiente</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script de Navegación -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-menu .nav-item[data-target]');
+            const sections = document.querySelectorAll('.view-section');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Quitar clase active de todos los nav items
+                    navItems.forEach(nav => nav.classList.remove('active'));
+
+                    // Añadir clase active al clickeado
+                    item.classList.add('active');
+
+                    // Ocultar todas las secciones
+                    sections.forEach(sec => {
+                        sec.classList.remove('active-section');
+                    });
+
+                    // Mostrar la sección correspondiente
+                    const targetId = item.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active-section');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
