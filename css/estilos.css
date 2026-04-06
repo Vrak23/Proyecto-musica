@@ -1,0 +1,43 @@
+:root {
+
+    /* Colores base solicitados */
+  
+    --color-base-1: #eeeeee; /* Gris Claro */
+  
+    --color-base-2: #ea9216; /* Naranja/Ámbar */
+  
+    --color-base-3: #3a4750; /* Azul/Gris Medio */
+  
+    --color-base-4: #313841; /* Azul/Gris Oscuro */
+  
+  
+  
+    /* Aplicación de los colores base a la estructura */
+  
+    --color-text-main: var(--color-base-1);
+  
+    --color-accent: var(--color-base-2);
+  
+    --color-bg-card: var(--color-base-3);
+  
+    --color-bg-main: var(--color-base-4);
+  
+    
+  
+    /* Colores suplementarios */
+  
+    --color-text-muted: #a0aab2;
+  
+    --color-accent-hover: #ffad3b;
+  
+    --color-success: #4caf50;
+  
+    --color-success-bg: rgba(76, 175, 80, 0.15);
+  
+    --color-warning: #ff9800;
+  
+    --color-warning-bg: rgba(255, 152, 0, 0.15);
+  
+  }
+  
+  
