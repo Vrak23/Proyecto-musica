@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#btnIngresar').click(function(e) {
+    $('#formLogin').submit(function(e) {
         e.preventDefault();
         Swal.fire({
             title: '¡Acceso Concedido!',
@@ -8,7 +8,7 @@ $(document).ready(function() {
             confirmButtonText: 'Continuar'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "dashboard.html";
+                window.location.href = "Dashboard.html";
             }
         });
     });
