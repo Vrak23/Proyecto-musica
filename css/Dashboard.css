@@ -1080,5 +1080,3 @@ input:checked + .slider:before {
     background-color: rgba(244, 67, 54, 0.1);
     border-color: #f44336;
 }
-
-/* El modo claro ahora hereda el slider oscuro por defecto */
